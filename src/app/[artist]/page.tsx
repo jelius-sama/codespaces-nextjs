@@ -3,11 +3,9 @@ import { Metadata, ServerRuntime } from "next";
 
 export const runtime: ServerRuntime = "edge";
 
-export const generateMetadata = async ({ params }: { params: { artist: string } }): Promise<Metadata> => {
-    const resFromServer = await testServerAction();
-
+export const generateMetadata = ({ params }: { params: { artist: string } }): Metadata => {
     return {
-        title: resFromServer + params.artist,
+        title: params.artist,
     }
 }
 

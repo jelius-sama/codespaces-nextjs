@@ -1,7 +1,11 @@
 import testServerAction from "@/server/action";
-import { ServerRuntime } from "next";
+import { Metadata, ServerRuntime } from "next";
 
 export const runtime: ServerRuntime = "edge";
+
+export const metadata: Metadata = {
+  title: "Home"
+}
 
 export default async function Home() {
   const resFromServer = await testServerAction();
